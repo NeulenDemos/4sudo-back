@@ -64,4 +64,13 @@ class User extends Authenticatable implements JWTSubject
         'updated_at',
         'created_at',
     ];
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+    public function getJWTCustomClaims()
+    {
+        return [];
+    }
 }
